@@ -144,22 +144,28 @@ print("""
 4. -Jaguatirica
 """)
 while True:
-    try:
-        mostrar_camera = input()
-        if not mostrar_camera.isnumeric():
-            raise ValueError("Apenas números positivos e entre 1 e 4")
-        if mostrar_camera == '1':
-            print(Fore.BLUE + "Mostrando a camera do cavalo" + Style.RESET_ALL)
-            print(cavalo)
-        elif mostrar_camera == '2':
-            print(Fore.BLUE + "Mostrando a camera do boto" + Style.RESET_ALL)
-            print(boto)
-        elif mostrar_camera == '3':
-            print(Fore.BLUE + "Mostrando a camera do panda" + Style.RESET_ALL)
-            print(panda)
-        elif mostrar_camera == '4':
-            print(Fore.BLUE + "Mostrando a camera da jaguatirica" + Style.RESET_ALL)
-            print(jaguatirica)
-        break
-    except ValueError as erro:
-        print(f"Erro: {erro}")
+    sair = input("Quer sair? [S]/[N]").upper()
+    if sair == "S":
+        print("Volte sempre!")
+    else:
+        while True:
+            try:
+                mostrar_camera = input()
+                if not mostrar_camera.isnumeric():
+                    raise ValueError("Apenas números positivos e entre 1 e 4")
+                if mostrar_camera == '1':
+                    print(Fore.BLUE + "Mostrando a camera do cavalo" + Style.RESET_ALL)
+                    print(cavalo)
+                elif mostrar_camera == '2':
+                    print(Fore.BLUE + "Mostrando a camera do boto" + Style.RESET_ALL)
+                    print(boto)
+                elif mostrar_camera == '3':
+                    print(Fore.BLUE + "Mostrando a camera do panda" + Style.RESET_ALL)
+                    print(panda)
+                elif mostrar_camera == '4':
+                    print(Fore.BLUE + "Mostrando a camera da jaguatirica" + Style.RESET_ALL)
+                    print(jaguatirica)
+                break
+            except ValueError as erro:
+                print(f"Erro: {erro}")
+
